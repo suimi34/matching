@@ -1,5 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, ScrollView, SafeAreaView, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  ScrollView,
+  SafeAreaView,
+  StyleSheet,
+  Image
+} from "react-native";
 
 function HomeScreen() {
   const [partners, setPartners] = useState([]);
@@ -14,24 +21,42 @@ function HomeScreen() {
   }, []);
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{ flex: 1 }}>
       <ScrollView>
         <View style={styles.container}>
           {partners.map(p => {
             return (
               <View
                 style={{
-                  borderWidth: 1,
-                  padding: "2%",
+                  borderWidth: 0.5,
+                  paddingHorizontal: "2%",
+                  paddingBottom: "1%",
                   margin: "5%",
                   marginBottom: "1%",
                   width: "40%",
                   borderColor: "grey"
                 }}
               >
-                <Text>{p.name}</Text>
-                <Text>出身</Text>
-                <Text>相性</Text>
+                <View>
+                  <Image
+                    source={require("../../assets/boy.jpg")}
+                    style={{
+                      width: null,
+                      resizeMode: "contain",
+                      height: 150,
+                      marginVertical: "-10%"
+                    }}
+                  />
+                </View>
+                <View>
+                  <Text>{p.name}</Text>
+                  <Text>
+                    出身: <Text>埼玉県</Text>
+                  </Text>
+                  <Text>
+                    相性: <Text>80%</Text>
+                  </Text>
+                </View>
               </View>
             );
           })}
@@ -47,7 +72,8 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     flexDirection: "row",
     flexWrap: "wrap",
-    width: "100%"
+    // width: "100%",
+    height: "100%"
   }
 });
 
