@@ -4,7 +4,6 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 
 import HomeScreen from "./src/screens/HomeScreen";
-
 import ProfileScreen from "./src/screens/ProfileScreen";
 
 export default function App() {
