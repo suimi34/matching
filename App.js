@@ -38,6 +38,7 @@ function Tabs() {
         activeTintColor: "tomato",
         inactiveTintColor: "grey"
       }}
+      initialRouteName="Map"
     >
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Map" component={MapScreen} />
