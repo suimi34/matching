@@ -5,6 +5,7 @@ import { Ionicons } from "@expo/vector-icons";
 
 import HomeScreen from "./src/screens/HomeScreen";
 import ProfileScreen from "./src/screens/ProfileScreen";
+import MapScreen from "./src/screens/MapScreen";
 
 export default function App() {
   return (
@@ -27,6 +28,8 @@ function Tabs() {
             iconName = "md-home";
           } else if (route.name === "Profile") {
             iconName = "md-person";
+          } else if (route.name === "Map") {
+            iconName = "md-map";
           }
           return <Ionicons name={iconName} size={size} color={color} />;
         }
@@ -37,6 +40,7 @@ function Tabs() {
       }}
     >
       <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Map" component={MapScreen} />
       <Tab.Screen name="Profile" component={ProfileScreen} />
     </Tab.Navigator>
   );
